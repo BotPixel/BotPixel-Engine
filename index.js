@@ -6,21 +6,22 @@ var #1 = io.of('/1');
 var text = "";
 var i;
 for (i = 0; i < 5001; i++) {
-(id + i).on('connection', function(socket){
+var z = io.of(/ + i);
+z.on('connection', function(socket){
   socket.on('player move', function(msg){
-    (id + i).emit('player move', msg);
+    z.emit('player move', msg);
     socket.on('chat message', function(msg){
-    (id + i).emit('chat message', msg);
+    z.emit('chat message', msg);
     socket.on('shoot', function(msg){
-    (id + i).emit('shoot', msg);
+    z.emit('shoot', msg);
     socket.on('join', function(msg){
-    (id + i).emit('join', msg);
+    z.emit('join', msg);
     socket.on('killfeed', function(msg){
-    (id + i).emit('killfeed', msg);
+    z.emit('killfeed', msg);
     socket.on('hurt', function(msg){
-    (id + i).emit('hurt', msg);
+    z.emit('hurt', msg);
     socket.on('death', function(msg){
-    (id + i).emit('death', msg);
+    z.emit('death', msg);
     });
 });
 

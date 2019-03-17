@@ -8,6 +8,12 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+test.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    test.emit('chat message', msg);
+  });
+}); 
+
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);

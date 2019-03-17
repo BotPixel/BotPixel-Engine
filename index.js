@@ -3,22 +3,24 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 var #1 = io.of('/1');
-
-id1.on('connection', function(socket){
+var text = "";
+var i;
+for (i = 0; i < 5001; i++) {
+(id + i).on('connection', function(socket){
   socket.on('player move', function(msg){
-    id1.emit('player move', msg);
+    (id + i).emit('player move', msg);
     socket.on('chat message', function(msg){
-    id1.emit('chat message', msg);
+    (id + i).emit('chat message', msg);
     socket.on('shoot', function(msg){
-    id1.emit('shoot', msg);
+    (id + i).emit('shoot', msg);
     socket.on('join', function(msg){
-    id1.emit('join', msg);
+    (id + i).emit('join', msg);
     socket.on('killfeed', function(msg){
-    id1.emit('killfeed', msg);
+    (id + i).emit('killfeed', msg);
     socket.on('hurt', function(msg){
-    id1.emit('hurt', msg);
+    (id + i).emit('hurt', msg);
     socket.on('death', function(msg){
-    id1.emit('death', msg);
+    (id + i).emit('death', msg);
     });
 });
 

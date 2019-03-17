@@ -2,15 +2,25 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
-var test = io.of('/test');
+var id1 = io.of('/id1');
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-test.on('connection', function(socket){
+id1.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    test.emit('chat message', msg);
+    id1.emit('chat message', msg);
+    socket.on('shoot', function(msg){
+    id1.emit('shoot', msg);
+    socket.on('player move', function(msg){
+    id1.emit('player move', msg);
+    socket.on('hurt', function(msg){
+    id1.emit('hurt', msg);
+    socket.on('join', function(msg){
+    id1.emit('join', msg);
+    socket.on('leave', function(msg){
+    id1.emit('leave', msg);
   });
 }); 
 

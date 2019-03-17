@@ -2,28 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
-var #1 = io.of('/1');
-var text = "";
-var i;
-for (i = 0; i < 5001; i++) {
-var z = io.of(/ + i);
-z.on('connection', function(socket){
-  socket.on('player move', function(msg){
-    z.emit('player move', msg);
-    socket.on('chat message', function(msg){
-    z.emit('chat message', msg);
-    socket.on('shoot', function(msg){
-    z.emit('shoot', msg);
-    socket.on('join', function(msg){
-    z.emit('join', msg);
-    socket.on('killfeed', function(msg){
-    z.emit('killfeed', msg);
-    socket.on('hurt', function(msg){
-    z.emit('hurt', msg);
-    socket.on('death', function(msg){
-    z.emit('death', msg);
-    });
-});
+var test = io.of('/test');
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');

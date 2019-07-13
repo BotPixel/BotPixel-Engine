@@ -1,6 +1,6 @@
 {
-  "name": "Socket-Chat-Example",
-  "description": "my first socket.io app",
+  "name": "BotPixel-Engine-Template",
+  "description": "Great starter template for hyperPad Multiplayer",
   "website": "https://github.com/socketio/chat-example",
   "repository": "https://github.com/socketio/chat-example",
   "logo": "https://node-js-sample.herokuapp.com/node.svg",

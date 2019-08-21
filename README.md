@@ -1,4 +1,4 @@
-# chat-example
+# Create your socket.io server here!
 
 This is a socket.io server template for hyperPad! You can deploy the server on heroku and immediately get started on creating a multiplayer project in hyperPad!
 

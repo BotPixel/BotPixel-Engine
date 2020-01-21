@@ -37,8 +37,8 @@ io.on('connection', function (socket) {
     });
 
 
-    socket.on('chat', function (msg) {
-        io.to(msg.room).emit('chat', { msg: msg.msg, user: socket.nickname, room: msg.room });
+    socket.on('event', function (msg) {
+        io.to(msg.room).emit('event', msg.msg);
     });
 
     socket.on('getusers', function (data) {

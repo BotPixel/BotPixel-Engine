@@ -31,7 +31,7 @@ io.on('connection', function (socket) {
 
 
     socket.on('event', function (msg) {
-        io.to(msg['room']).emit('event', msg['msg']);
+        io.to(msg[0]).emit('event', msg[1]);
     });
 
     socket.on('getusers', function (data) {

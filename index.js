@@ -6,13 +6,6 @@ var port = process.env.PORT || 3000;
 var users = {};
 var rooms = {};
 
-
-app.use(express.static(__dirname + '/public'));
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-});
-
-
 io.on('connection', function (socket) {
 
     socket.on('login', function (data, callback) {
